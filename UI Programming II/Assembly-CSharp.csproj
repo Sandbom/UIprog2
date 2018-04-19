@@ -121,11 +121,11 @@
  <Reference Include="UnityEngine.VR">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
  </Reference>
- <Reference Include="TextMeshPro-5.6-1.0.56-Runtime">
- <HintPath>/Users/Sandbom/UI Programming II/Assets/TextMesh Pro/Plugins/Editor DLL/TextMeshPro-5.6-1.0.56-Runtime.dll</HintPath>
- </Reference>
  <Reference Include="TextMeshPro-5.6-1.0.56-Editor">
- <HintPath>/Users/Sandbom/UI Programming II/Assets/TextMesh Pro/Plugins/Editor DLL/TextMeshPro-5.6-1.0.56-Editor.dll</HintPath>
+ <HintPath>/Users/Sandbom/UIProj2/UIprog2/UI Programming II/Assets/TextMesh Pro/Plugins/Editor DLL/TextMeshPro-5.6-1.0.56-Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="TextMeshPro-5.6-1.0.56-Runtime">
+ <HintPath>/Users/Sandbom/UIProj2/UIprog2/UI Programming II/Assets/TextMesh Pro/Plugins/Editor DLL/TextMeshPro-5.6-1.0.56-Runtime.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
