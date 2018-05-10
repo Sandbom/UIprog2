@@ -15,6 +15,11 @@ public class Playerhealth : MonoBehaviour {
 
 	// HUD variables
 	public Slider healthSlider;
+	public Image damageScreen;
+
+	bool damaged = false;
+	Color damagedColor = new Color(255f,255f,255f,0.5f);
+	float smoothColor = 2f;
 
 	// Use this for initialization
 	void Start () {
@@ -31,6 +36,12 @@ public class Playerhealth : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (damaged) {
+			damageScreen.color = damagedColor;
+		} else {
+			damageScreen.color = Color.Lerp (damageScreen.color, Color.clear, smoothColor*Time.deltaTime);
+		}
+		damaged = false;
 		
 	}
 
@@ -40,6 +51,7 @@ public class Playerhealth : MonoBehaviour {
 		}
 		currentHealth = currentHealth - Damage;
 		healthSlider.value = currentHealth;
+		damaged = true;
 
 		if (currentHealth <= 0) {
 			killPlayer ();
