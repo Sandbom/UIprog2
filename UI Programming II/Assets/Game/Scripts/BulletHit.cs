@@ -6,14 +6,14 @@ public class BulletHit : MonoBehaviour {
 
 	public float weaponDamage;
 
-	projectileController myPC;
+	//projectileController myPC;
 
 	public GameObject explosionEffect;
 
 	// Use this for initialization
-	void Awake () {
-		myPC = GetComponentInParent<projectileController> ();
-	}
+	//void Awake () {
+	//	myPC = GetComponentInParent<projectileController> ();
+	//}
 	
 	// Update is called once per frame
 	void Update () {
@@ -21,9 +21,15 @@ public class BulletHit : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D other){
-		if (other.tag == "Enemy") {
+		if (other.gameObject.layer == LayerMask.NameToLayer("Shootable")) {
 			Instantiate (explosionEffect, transform.position, transform.rotation);
 			Destroy (gameObject);
+		}
+
+		if (other.tag == "Enemy") {
+
+			EnemyHealth hurtEnemy = other.gameObject.GetComponent<EnemyHealth> ();
+			hurtEnemy.addDamage (weaponDamage);
 		}
 	}
 }
