@@ -7,6 +7,9 @@ public class Playerhealth : MonoBehaviour {
 
 	public float fullHealth;
 	public GameObject Deatheffect;
+	public AudioClip PlayerhurtSound;
+
+	AudioSource playerAS;
 
 	float currentHealth;
 
@@ -30,6 +33,8 @@ public class Playerhealth : MonoBehaviour {
 		// HUD initialization
 		healthSlider.maxValue=fullHealth;
 		healthSlider.value = fullHealth;
+
+		playerAS = GetComponent<AudioSource> ();
 	}
 
 
@@ -50,6 +55,9 @@ public class Playerhealth : MonoBehaviour {
 			return;
 		}
 		currentHealth = currentHealth - Damage;
+
+		playerAS.clip = PlayerhurtSound; // Set clip to play on damage taken
+		playerAS.PlayOneShot(PlayerhurtSound);
 		healthSlider.value = currentHealth;
 		damaged = true;
 
