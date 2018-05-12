@@ -31,5 +31,10 @@ public class BulletHit : MonoBehaviour {
 			EnemyHealth hurtEnemy = other.gameObject.GetComponent<EnemyHealth> ();
 			hurtEnemy.addDamage (weaponDamage);
 		}
+
+		if (other.tag == "Enemy1") {
+			SkeletonHealthController hurtEnemy = other.gameObject.GetComponent<SkeletonHealthController> ();
+			hurtEnemy.addDamage (weaponDamage);
+		}
 	}
 }

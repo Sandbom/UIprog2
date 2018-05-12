@@ -13,7 +13,6 @@ public class EnemyHealth : MonoBehaviour {
 	Animator enemyAnim;
 
 	float currentHealth;
-	public bool alive = true;
 	Rigidbody2D enemyRB;
 
 	// Use this for initialization
@@ -36,15 +35,12 @@ public class EnemyHealth : MonoBehaviour {
 		enemyhealthbar.value = currentHealth;
 
 		if (currentHealth <= 0) {
-			enemyAnim.SetBool ("EnemyDeath", true);
-			alive = false;
-			//enemyRB.velocity = new Vector2 (0f, 0f);
-			Invoke("killEnemy", 1);
+			killEnemy ();
 		}
 	}
 
 	void killEnemy(){
-		//Instantiate (enemyDeathFX, transform.position, transform.rotation);
+		Instantiate (enemyDeathFX, transform.position, transform.rotation);
 		Destroy (gameObject);
 	}
 		
