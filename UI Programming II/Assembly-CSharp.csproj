@@ -57,6 +57,7 @@
      <Compile Include="Assets\Game\Scripts\attackClosePlayer.cs" />
      <Compile Include="Assets\Game\Scripts\enemyDamage.cs" />
      <Compile Include="Assets\Game\Scripts\enemyMovement.cs" />
+     <Compile Include="Assets\Game\Scripts\movePlatform.cs" />
      <Compile Include="Assets\Game\Scripts\projectileController.cs" />
      <Compile Include="Assets\Menu\MainMenu.cs" />
      <Compile Include="Assets\Menu\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
