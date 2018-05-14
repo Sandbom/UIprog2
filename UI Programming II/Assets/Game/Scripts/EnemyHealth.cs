@@ -35,6 +35,7 @@ public class EnemyHealth : MonoBehaviour {
 		enemyhealthbar.value = currentHealth;
 
 		if (currentHealth <= 0) {
+			ScoreScript.scoreValue += 100;
 			killEnemy ();
 		}
 	}
