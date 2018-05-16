@@ -19,6 +19,7 @@ public class Playerhealth : MonoBehaviour {
 	// HUD variables
 	public Slider healthSlider;
 	public Image damageScreen;
+	public GameObject gameOverText;
 
 	bool damaged = false;
 	Color damagedColor = new Color(255f,255f,255f,0.5f);
@@ -67,8 +68,20 @@ public class Playerhealth : MonoBehaviour {
 			
 	}
 
+	public void addHealth(float healthAmount){
+		currentHealth += healthAmount;
+		if (currentHealth > fullHealth) {
+			currentHealth = fullHealth;
+		}
+		healthSlider.value = currentHealth;
+	}
+
 	public void killPlayer(){
 		Instantiate (Deatheffect, transform.position, transform.rotation);
 		Destroy (gameObject);
+
+		damageScreen.color = damagedColor;
+		Animator gameOverAnimator = gameOverText.GetComponent<Animator> ();
+		gameOverAnimator.SetTrigger ("gameOver");
 	}
 }

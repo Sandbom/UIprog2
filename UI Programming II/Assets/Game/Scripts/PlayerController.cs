@@ -22,7 +22,9 @@ public class PlayerController : MonoBehaviour {
 
 	//For shooting
 	public Transform gunTip;
+	public Transform lightninggunTip;
 	public GameObject bullet;
+	public GameObject lightning;
 	public float fireRate = 0.15f;
 	float nextFire = 0f;	
 
@@ -96,11 +98,17 @@ public class PlayerController : MonoBehaviour {
 	void fireGun(){
 		if (Time.time > nextFire) {
 			nextFire = Time.time + fireRate;
-			if (facingRight) {
+			if (facingRight && !onPowerPickup.Powerupped) {
 				Instantiate (bullet, gunTip.position, Quaternion.Euler (new Vector3 (0, 0, 0)));
 			} 
-			else if (!facingRight) {
+			else if (!facingRight && !onPowerPickup.Powerupped) {
 				Instantiate (bullet, gunTip.position, Quaternion.Euler (new Vector3 (0, 0, 180)));
+			}
+			else if (facingRight && onPowerPickup.Powerupped) {
+				Instantiate (lightning, lightninggunTip.position, Quaternion.Euler (new Vector3 (0, 0, 0)));
+			}
+			else if (!facingRight && onPowerPickup.Powerupped) {
+				Instantiate (lightning, lightninggunTip.position, Quaternion.Euler (new Vector3 (0, 0, 180)));
 			}
 		}
 	}

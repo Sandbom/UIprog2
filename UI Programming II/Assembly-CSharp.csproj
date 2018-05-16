@@ -48,9 +48,11 @@
   <ItemGroup>
      <Compile Include="Assets\Game\Scripts\BulletHit.cs" />
      <Compile Include="Assets\Game\Scripts\Camerafollow.cs" />
+     <Compile Include="Assets\Game\Scripts\Cleaner.cs" />
      <Compile Include="Assets\Game\Scripts\DestroyMe.cs" />
      <Compile Include="Assets\Game\Scripts\DestroyObject.cs" />
      <Compile Include="Assets\Game\Scripts\EnemyHealth.cs" />
+     <Compile Include="Assets\Game\Scripts\PickupSoundPlay.cs" />
      <Compile Include="Assets\Game\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Game\Scripts\Playerhealth.cs" />
      <Compile Include="Assets\Game\Scripts\ScoreScript.cs" />
@@ -58,8 +60,11 @@
      <Compile Include="Assets\Game\Scripts\attackClosePlayer.cs" />
      <Compile Include="Assets\Game\Scripts\enemyDamage.cs" />
      <Compile Include="Assets\Game\Scripts\enemyMovement.cs" />
+     <Compile Include="Assets\Game\Scripts\healthPickup.cs" />
      <Compile Include="Assets\Game\Scripts\movePlatform.cs" />
      <Compile Include="Assets\Game\Scripts\onPickup.cs" />
+     <Compile Include="Assets\Game\Scripts\onPowerPickup.cs" />
+     <Compile Include="Assets\Game\Scripts\powerupTimer.cs" />
      <Compile Include="Assets\Game\Scripts\projectileController.cs" />
      <Compile Include="Assets\Menu\MainMenu.cs" />
      <Compile Include="Assets\Menu\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
