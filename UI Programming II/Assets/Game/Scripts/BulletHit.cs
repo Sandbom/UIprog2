@@ -21,7 +21,10 @@ public class BulletHit : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D other){
-		if (other.gameObject.layer == LayerMask.NameToLayer("Shootable")) {
+		if (other.gameObject.layer == LayerMask.NameToLayer ("Shootable")) {
+			Instantiate (explosionEffect, transform.position, transform.rotation);
+			Destroy (gameObject);
+		} else if (other.gameObject.layer == LayerMask.NameToLayer ("Ground")) {
 			Instantiate (explosionEffect, transform.position, transform.rotation);
 			Destroy (gameObject);
 		}
