@@ -9,6 +9,8 @@ public class PauseMenu : MonoBehaviour {
 
 	public GameObject pauseMenuUI;
 
+	public Animator animation;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -38,12 +40,18 @@ public class PauseMenu : MonoBehaviour {
 	}
 
 	public void loadMenu(){
+		Time.timeScale = 1f;
+		GameIsPaused = false;
+		animation.SetTrigger ("FadeOut");
 		ScoreScript.scoreValue = 0;
-		SceneManager.LoadScene (0);
 	}
 
 	public void quitGame(){
 		Debug.Log ("Quitting Game");
 		Application.Quit ();
+	}
+
+	public void delayloadMenu(){
+		SceneManager.LoadScene (0);
 	}
 }

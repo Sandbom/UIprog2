@@ -5,15 +5,23 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour {
 
-	public void PlayGame()
-	{
-		SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex + 1);
+	public Animator animator;
 
+	public GameObject cans;
+
+	public void PlayGame()
+	{	
+		cans.SetActive (true);
+		animator.SetTrigger ("FadeOut");
 	}
 
 	public void Quitgame()
 	{
 		Debug.Log ("Quitting game");
 		Application.Quit ();
+	}
+
+	public void CompleteFade(){
+		SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex + 1);
 	}
 }
