@@ -12,12 +12,9 @@ public class ResetGame : MonoBehaviour {
 	void Start () {
 		btn = GetComponent<Button> ();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		if (Input.GetMouseButtonDown (0)) {
-			SceneManager.LoadScene (1);
-			ScoreScript.scoreValue = 0;
-		}
+
+	public void resetGame() {
+		SceneManager.LoadScene (1);
+		ScoreScript.scoreValue = 0;
 	}
 }

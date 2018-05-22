@@ -52,6 +52,7 @@
      <Compile Include="Assets\Game\Scripts\DestroyMe.cs" />
      <Compile Include="Assets\Game\Scripts\DestroyObject.cs" />
      <Compile Include="Assets\Game\Scripts\EnemyHealth.cs" />
+     <Compile Include="Assets\Game\Scripts\PauseMenu.cs" />
      <Compile Include="Assets\Game\Scripts\PickupSoundPlay.cs" />
      <Compile Include="Assets\Game\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Game\Scripts\Playerhealth.cs" />

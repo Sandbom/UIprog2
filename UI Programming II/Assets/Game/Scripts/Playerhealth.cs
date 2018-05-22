@@ -20,6 +20,7 @@ public class Playerhealth : MonoBehaviour {
 	public Slider healthSlider;
 	public Image damageScreen;
 	public GameObject gameOverText;
+	public GameObject RetryButton;
 
 	bool damaged = false;
 	Color damagedColor = new Color(255f,255f,255f,0.5f);
@@ -83,5 +84,6 @@ public class Playerhealth : MonoBehaviour {
 		damageScreen.color = damagedColor;
 		Animator gameOverAnimator = gameOverText.GetComponent<Animator> ();
 		gameOverAnimator.SetTrigger ("gameOver");
+		RetryButton.SetActive (true);
 	}
 }
