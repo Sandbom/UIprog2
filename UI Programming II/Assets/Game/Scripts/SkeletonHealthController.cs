@@ -45,8 +45,8 @@ public class SkeletonHealthController : MonoBehaviour {
 		enemyhealthbar1.value = currentHealth;
 
 		if (currentHealth <= 0 && dying == false) {
-			//SkeletonCollider1.enabled = false;
-			//SkeletonCollider2.enabled = false;
+			// Disable the colliders during the deathanimaton so the player can walk through the corpse and doesnt
+			// take damage from touching the corpse, we also set the parents Rigidbody to kinematic to avoid the corpse falling through the map
 			foreach(Collider2D c in GetComponents<BoxCollider2D> ()) {
 				c.enabled = false;
 			}

@@ -68,18 +68,22 @@ public class enemyMovement : MonoBehaviour {
 	void OnTriggerStay2D(Collider2D other){
 
 		if (other.tag == "Player") {
-			if (startChargeTime < Time.time) {
-				SkeletonHealthController enemyhp = gameObject.GetComponentInChildren<SkeletonHealthController> ();
-				if (!facingRight && enemyhp.alive) {
-					enemyRB.AddForce (new Vector2 (-1, 0) * enemySpeed);
-				} else if (facingRight && enemyhp.alive) {
-					enemyRB.AddForce (new Vector2 (1, 0) * enemySpeed);
-				} else if (!enemyhp.alive) {
-					enemyRB.AddForce (new Vector2 (0f, 0f));		
-				}
-				if (!attackClosePlayer.attacking) {
+			if (!attackClosePlayer.attacking) {
+				if (startChargeTime < Time.time) {
+					SkeletonHealthController enemyhp = gameObject.GetComponentInChildren<SkeletonHealthController> ();
+					if (!facingRight && enemyhp.alive) {
+						enemyRB.AddForce (new Vector2 (-1, 0) * enemySpeed);
+					} else if (facingRight && enemyhp.alive) {
+						enemyRB.AddForce (new Vector2 (1, 0) * enemySpeed);
+					} else if (!enemyhp.alive) {
+						enemyRB.AddForce (new Vector2 (0f, 0f));
+						enemyRB.angularVelocity = 0;
+						enemyRB.angularDrag = 0;
+					}
 					enemyAnimator.SetBool ("SeesPlayer", SeesPlayer);	
 				}
+			} else if (attackClosePlayer.attacking) {
+				enemyAnimator.SetBool ("SeesPlayer", SeesPlayer);
 			}
 		}
 	}	
