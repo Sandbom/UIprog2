@@ -10,16 +10,22 @@ public class powerupTimer : MonoBehaviour {
 	public Image lightningproj;
 	public Image blueproj;
 	public Image infinitySymbol;
+	public GameObject LightningText;
+
+	Animator anim;
 
 	// Use this for initialization
 	void Start () {
 		timerText = GetComponent<Text> ();
 		lightningproj.enabled = false;
+		anim = gameObject.GetComponentInChildren<Animator> ();
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
 		if (onPowerPickup.Powerupped) {
+			LightningText.SetActive (true);
+			Invoke ("removeText", 2);
 			blueproj.enabled = false;
 			infinitySymbol.enabled = false;
 			lightningproj.enabled = true;
@@ -34,5 +40,9 @@ public class powerupTimer : MonoBehaviour {
 			infinitySymbol.enabled = true;
 	
 		}
+	}
+
+	void removeText(){
+		LightningText.SetActive (false);
 	}
 }

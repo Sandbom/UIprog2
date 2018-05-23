@@ -75,9 +75,11 @@ public class enemyMovement : MonoBehaviour {
 				} else if (facingRight && enemyhp.alive) {
 					enemyRB.AddForce (new Vector2 (1, 0) * enemySpeed);
 				} else if (!enemyhp.alive) {
-						enemyRB.AddForce (new Vector2 (0f, 0f));		
+					enemyRB.AddForce (new Vector2 (0f, 0f));		
 				}
-				enemyAnimator.SetBool ("SeesPlayer", SeesPlayer);	
+				if (!attackClosePlayer.attacking) {
+					enemyAnimator.SetBool ("SeesPlayer", SeesPlayer);	
+				}
 			}
 		}
 	}	

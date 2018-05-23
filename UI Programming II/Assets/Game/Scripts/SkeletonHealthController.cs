@@ -18,6 +18,8 @@ public class SkeletonHealthController : MonoBehaviour {
 	Rigidbody2D enemyRB;
 	public BoxCollider2D SkeletonCollider1;
 	public BoxCollider2D SkeletonCollider2;
+
+	// Boolean to check wether the target is in the process of dying, so shooting it wont add more score
 	bool dying = false;
 
 	// Use this for initialization
@@ -43,15 +45,19 @@ public class SkeletonHealthController : MonoBehaviour {
 		enemyhealthbar1.value = currentHealth;
 
 		if (currentHealth <= 0 && dying == false) {
+			//SkeletonCollider1.enabled = false;
+			//SkeletonCollider2.enabled = false;
+			foreach(Collider2D c in GetComponents<BoxCollider2D> ()) {
+				c.enabled = false;
+			}
+			enemyRB.isKinematic = true;
+			alive = false;
 			dying = true;
 			enemyAS.clip = enemyDeathSound;
 			enemyAS.PlayOneShot (enemyDeathSound);
 			ScoreScript.scoreValue += 500;
 			enemyAnim.SetBool ("EnemyDeath", true);
-			alive = false;
-			SkeletonCollider1.enabled = false;
-			SkeletonCollider2.enabled = false;
-			Destroy(gameObject, 2f);
+			Destroy(gameObject, 1.1f);
 		}
 	}
 
