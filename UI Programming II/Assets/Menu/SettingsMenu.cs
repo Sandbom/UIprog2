@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
+using TMPro;
 
 public class SettingsMenu : MonoBehaviour {
 
@@ -10,7 +11,24 @@ public class SettingsMenu : MonoBehaviour {
 
 	Resolution[] resolutions;
 
+	public bool EnglishText = true;
+
 	public Dropdown resolutionDropDown;
+
+
+	//Variables for changing lang
+	public TextMeshProUGUI title;
+	public TextMeshProUGUI playbutton;
+	public TextMeshProUGUI optionsbutton;
+	public TextMeshProUGUI quitbutton;
+	public TextMeshProUGUI optionstext;
+	public TextMeshProUGUI resolutiontext;
+	public TextMeshProUGUI graphicstext;
+	public TextMeshProUGUI Fullscreentext;
+	public TextMeshProUGUI Volumetext;
+	public TextMeshProUGUI backtext;
+
+
 
 	void Start(){
 		resolutions = Screen.resolutions;
@@ -51,4 +69,37 @@ public class SettingsMenu : MonoBehaviour {
 		Resolution resolution = resolutions [ResolutionIndex];
 		Screen.SetResolution (resolution.width, resolution.height, Screen.fullScreen);
 	}
+
+	public void SetSwedishLanguage(){
+		if (EnglishText == true) {
+			EnglishText = false;
+			title.text = "Rädda Världen";
+			playbutton.text = "Spela";
+			optionsbutton.text = "Inställningar";
+			quitbutton.text = "Avsluta";
+			optionstext.text = "Inställningar";
+			resolutiontext.text = "Upplösning";
+			graphicstext.text = "Kvalitet";
+			Fullscreentext.text = "Fullskärm";
+			Volumetext.text = "Volym";
+			backtext.text = "Tillbaka";
+		}
+	}
+
+	public void SetEnglishLanguage(){
+		if (EnglishText == false) {
+			EnglishText = true;
+			title.text = "Save the world";
+			playbutton.text = "Play";
+			optionsbutton.text = "Options";
+			quitbutton.text = "Quit";
+			optionstext.text = "Options";
+			resolutiontext.text = "Resolution";
+			graphicstext.text = "Graphics";
+			Fullscreentext.text = "Full Screen";
+			Volumetext.text = "Volume";
+			backtext.text = "Back";
+		}
+	}
+
 }

@@ -59,6 +59,7 @@
      <Compile Include="Assets\Game\Scripts\ResetGame.cs" />
      <Compile Include="Assets\Game\Scripts\ScoreScript.cs" />
      <Compile Include="Assets\Game\Scripts\SkeletonHealthController.cs" />
+     <Compile Include="Assets\Game\Scripts\StartBossFight.cs" />
      <Compile Include="Assets\Game\Scripts\attackClosePlayer.cs" />
      <Compile Include="Assets\Game\Scripts\enemyDamage.cs" />
      <Compile Include="Assets\Game\Scripts\enemyMovement.cs" />
