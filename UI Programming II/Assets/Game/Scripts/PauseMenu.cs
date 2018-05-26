@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿	using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -41,6 +41,7 @@ public class PauseMenu : MonoBehaviour {
 
 	public void loadMenu(){
 		Time.timeScale = 1f;
+		Time.fixedDeltaTime = 0.02F;
 		GameIsPaused = false;
 		animation.SetTrigger ("FadeOut");
 		ScoreScript.scoreValue = 0;

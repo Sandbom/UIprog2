@@ -42,10 +42,6 @@ public class enemyMovement : MonoBehaviour {
 			}
 			nextFlipChance = Time.time + flipTime;
 		}
-		//EnemyHealth enemyhp = gameObject.GetComponentInChildren<EnemyHealth> ();
-		//if (!enemyhp.alive) {
-		//	enemyRB.isKinematic = true;
-	//	}
 	}
 
 	void OnTriggerEnter2D(Collider2D other){

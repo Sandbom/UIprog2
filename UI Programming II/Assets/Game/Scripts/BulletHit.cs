@@ -39,5 +39,9 @@ public class BulletHit : MonoBehaviour {
 			SkeletonHealthController hurtEnemy = other.gameObject.GetComponent<SkeletonHealthController> ();
 			hurtEnemy.addDamage (weaponDamage);
 		}
+		if (other.tag == "Boss") {
+			BossMovement hurtEnemy = other.gameObject.GetComponent<BossMovement> ();
+			hurtEnemy.addDamage (weaponDamage);
+		}
 	}
 }
