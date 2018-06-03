@@ -11,7 +11,7 @@ public class SettingsMenu : MonoBehaviour {
 
 	Resolution[] resolutions;
 
-	public bool EnglishText = true;
+	public static bool EnglishText = true;
 
 	public Dropdown resolutionDropDown;
 
@@ -27,6 +27,7 @@ public class SettingsMenu : MonoBehaviour {
 	public TextMeshProUGUI Fullscreentext;
 	public TextMeshProUGUI Volumetext;
 	public TextMeshProUGUI backtext;
+	public TextMeshProUGUI Tutorialtext;
 
 
 
@@ -83,6 +84,7 @@ public class SettingsMenu : MonoBehaviour {
 			Fullscreentext.text = "Fullskärm";
 			Volumetext.text = "Volym";
 			backtext.text = "Tillbaka";
+			Tutorialtext.text = "Instruktioner";
 		}
 	}
 
@@ -99,6 +101,7 @@ public class SettingsMenu : MonoBehaviour {
 			Fullscreentext.text = "Full Screen";
 			Volumetext.text = "Volume";
 			backtext.text = "Back";
+			Tutorialtext.text = "Tutorial";
 		}
 	}
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour {
 
@@ -11,9 +12,21 @@ public class PauseMenu : MonoBehaviour {
 
 	public Animator animation;
 
+	public Text resumetext;
+	public Text menutext;
+	public Text quittext;
+
 	// Use this for initialization
 	void Start () {
-		
+		if (SettingsMenu.EnglishText) {
+			resumetext.text = "Resume";
+			menutext.text = "Menu";
+			quittext.text = "Quit";
+		} else if (!SettingsMenu.EnglishText) {
+			resumetext.text = "Fortsätt";
+			menutext.text = "Meny";
+			quittext.text = "Avsluta";
+		}
 	}
 	
 	// Update is called once per frame
@@ -53,6 +66,10 @@ public class PauseMenu : MonoBehaviour {
 	}
 
 	public void delayloadMenu(){
+		SceneManager.LoadScene (0);
+	}
+
+	public void CompleteFademenu(){
 		SceneManager.LoadScene (0);
 	}
 }

@@ -15,6 +15,10 @@ public class MainMenu : MonoBehaviour {
 		animator.SetTrigger ("FadeOut");
 	}
 
+	public void PlayTutorial(){
+		SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex + 2);
+	}
+
 	public void Quitgame()
 	{
 		Debug.Log ("Quitting game");

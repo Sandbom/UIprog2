@@ -15,6 +15,11 @@ public class ScoreScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Score.text = ("Score: " + scoreValue);
+		if (SettingsMenu.EnglishText) {
+			Score.text = ("Score: " + scoreValue);
+		}
+		else if (!SettingsMenu.EnglishText) {
+			Score.text = ("Poäng: " + scoreValue);
+		}
 	}
 }

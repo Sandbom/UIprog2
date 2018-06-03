@@ -1,0 +1,17 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Tutorial/LanguagecontrollerTutorial.cs">
+    <Files>
+      <File FileName="Assets/Menu/SettingsMenu.cs" Line="24" Column="37" />
+      <File FileName="Assets/Menu/MainMenu.cs" Line="25" Column="23" />
+      <File FileName="Assets/Tutorial/EndTutorial.cs" Line="19" Column="31" />
+      <File FileName="Assets/Game/Scripts/BossMovement.cs" Line="92" Column="1" />
+      <File FileName="Assets/Game/Scripts/PauseMenu.cs" Line="46" Column="3" />
+      <File FileName="Assets/Tutorial/LanguagecontrollerTutorial.cs" Line="11" Column="20" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
