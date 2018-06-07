@@ -1,13 +1,15 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Tutorial/LanguagecontrollerTutorial.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Tutorial/EndTutorial.cs">
     <Files>
-      <File FileName="Assets/Menu/SettingsMenu.cs" Line="24" Column="37" />
-      <File FileName="Assets/Menu/MainMenu.cs" Line="25" Column="23" />
-      <File FileName="Assets/Tutorial/EndTutorial.cs" Line="19" Column="31" />
-      <File FileName="Assets/Game/Scripts/BossMovement.cs" Line="92" Column="1" />
-      <File FileName="Assets/Game/Scripts/PauseMenu.cs" Line="46" Column="3" />
-      <File FileName="Assets/Tutorial/LanguagecontrollerTutorial.cs" Line="11" Column="20" />
+      <File FileName="Assets/Tutorial/LanguagecontrollerTutorial.cs" Line="1" Column="1" />
+      <File FileName="Assets/Menu/SettingsMenu.cs" Line="77" Column="4" />
+      <File FileName="Assets/Tutorial/EndTutorial.cs" Line="18" Column="35" />
+      <File FileName="Assets/Game/Scripts/BossMovement.cs" Line="1" Column="1" />
+      <File FileName="Assets/Game/Scripts/PauseMenu.cs" Line="11" Column="32" />
+      <File FileName="Assets/Game/Scripts/ScoreScript.cs" Line="26" Column="1" />
+      <File FileName="Assets/Game/Scripts/ResetGame.cs" Line="38" Column="4" />
+      <File FileName="Assets/Game/Scripts/PlayerController.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

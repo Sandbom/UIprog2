@@ -1,11 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class EndTutorial : MonoBehaviour {
 
-	public GameObject Menubutton;
-	public GameObject Quitbutton;
+	public GameObject tutorialCanvas;
 
 	// Use this for initialization
 	void Start () {
@@ -15,7 +15,6 @@ public class EndTutorial : MonoBehaviour {
 	void OnTriggerEnter2D(){
 		Time.timeScale = 0.05f;
 		Time.fixedDeltaTime = 0.02F * Time.timeScale;
-		Menubutton.SetActive (true);
-		Quitbutton.SetActive (true);
+		tutorialCanvas.SetActive (true);
 	}
 }
