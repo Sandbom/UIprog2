@@ -32,6 +32,35 @@ public class SettingsMenu : MonoBehaviour {
 
 
 	void Start(){
+
+		if (EnglishText == true) {
+			title.text = "Save the world";
+			playbutton.text = "Play";
+			optionsbutton.text = "Options";
+			quitbutton.text = "Quit";
+			optionstext.text = "Options";
+			resolutiontext.text = "Resolution";
+			graphicstext.text = "Graphics";
+			Fullscreentext.text = "Full Screen";
+			Volumetext.text = "Volume";
+			backtext.text = "Back";
+			Tutorialtext.text = "Tutorial";
+		}
+
+		else if (EnglishText == false) {
+			title.text = "Rädda Världen";
+			playbutton.text = "Spela";
+			optionsbutton.text = "Inställningar";
+			quitbutton.text = "Avsluta";
+			optionstext.text = "Inställningar";
+			resolutiontext.text = "Upplösning";
+			graphicstext.text = "Kvalitet";
+			Fullscreentext.text = "Fullskärm";
+			Volumetext.text = "Volym";
+			backtext.text = "Tillbaka";
+			Tutorialtext.text = "Instruktioner";
+		}
+
 		resolutions = Screen.resolutions;
 
 		List<string> options = new List<string>();
