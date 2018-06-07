@@ -9,7 +9,8 @@ public class BossProjectile : MonoBehaviour {
 
 	Rigidbody2D myRB;
 
-	// Use this for initialization
+	// Awake is called once the object is instantiated, in this case the boss projectile.
+	// this function makes sure the projectile is fired in the right direction & proper speed
 	void Awake () {
 		myRB = GetComponent<Rigidbody2D> ();
 		if (transform.localRotation.z <= 0) {
@@ -18,7 +19,7 @@ public class BossProjectile : MonoBehaviour {
 		else myRB.AddForce (new Vector2 (1, 0) * projectileSpeed, ForceMode2D.Impulse);
 	}
 
-
+	// if bullet hits player, add damage to player health.
 	void OnTriggerEnter2D(Collider2D other){
 		if (other.gameObject.layer == LayerMask.NameToLayer ("Ground")) {
 			Destroy (gameObject);

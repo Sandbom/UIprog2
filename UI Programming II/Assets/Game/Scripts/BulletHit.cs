@@ -6,20 +6,11 @@ public class BulletHit : MonoBehaviour {
 
 	public float weaponDamage;
 
-	//projectileController myPC;
-
 	public GameObject explosionEffect;
 
-	// Use this for initialization
-	//void Awake () {
-	//	myPC = GetComponentInParent<projectileController> ();
-	//}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
+	// When entering projectile collider and if object shootable or ground we detroy the bullet and instantiate explosion animation
+	// If it is an enemy we call its addDamage function to add damage to its health.
 	void OnTriggerEnter2D(Collider2D other){
 		if (other.gameObject.layer == LayerMask.NameToLayer ("Shootable")) {
 			Instantiate (explosionEffect, transform.position, transform.rotation);

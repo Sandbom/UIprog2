@@ -12,12 +12,11 @@ public class attackClosePlayer : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		//enemyanim = GameObject.Find("Skeleton_PowerfulAIenemy").GetComponent<Animator> ();
 		enemyanim = skeleton.GetComponent<Animator>();
 		parentRB = GetComponentInParent<Rigidbody2D> ();
 	}
 
-
+	// If the players enters this collider, start attacking and set rigid body to kinematic to make the skeleton stand still while hitting
 	void OnTriggerEnter2D(Collider2D other){
 
 		if (other.tag == "Player") {
@@ -28,7 +27,7 @@ public class attackClosePlayer : MonoBehaviour {
 		}
 	}
 
-
+	// Stop attacking once the player exits the "attack zone"
 	void OnTriggerExit2D(Collider2D other){
 		if (other.tag == "Player") {
 			attacking = false;

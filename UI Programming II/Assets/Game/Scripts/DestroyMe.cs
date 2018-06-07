@@ -6,13 +6,9 @@ public class DestroyMe : MonoBehaviour {
 
 	public float aliveTime;
 
-	// Use this for initialization
+	// Function to destroy a projectile seconds after its instantiated, time is based on aliveTime
 	void Awake () {
 		Destroy (gameObject, aliveTime);
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
 }

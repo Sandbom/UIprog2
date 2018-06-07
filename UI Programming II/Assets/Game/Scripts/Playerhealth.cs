@@ -41,7 +41,7 @@ public class Playerhealth : MonoBehaviour {
 
 
 	
-	// Update is called once per frame
+	// If damaged we show the damaged indicator screen
 	void Update () {
 		if (damaged) {
 			damageScreen.color = damagedColor;
@@ -52,6 +52,7 @@ public class Playerhealth : MonoBehaviour {
 		
 	}
 
+	// adds damage to the player and removes some of the health, if health is 0 we kill player
 	public void addDamage(float Damage){
 		if (Damage <= 0) {
 			return;
@@ -68,7 +69,7 @@ public class Playerhealth : MonoBehaviour {
 		}
 			
 	}
-
+	// Add health when picking up a heart
 	public void addHealth(float healthAmount){
 		currentHealth += healthAmount;
 		if (currentHealth > fullHealth) {
@@ -77,6 +78,7 @@ public class Playerhealth : MonoBehaviour {
 		healthSlider.value = currentHealth;
 	}
 
+	// Add death effect on death and queue "You died" text and retry button
 	public void killPlayer(){
 		Instantiate (Deatheffect, transform.position, transform.rotation);
 		Destroy (gameObject);

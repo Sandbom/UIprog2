@@ -31,8 +31,9 @@ public class SettingsMenu : MonoBehaviour {
 
 
 
-	void Start(){
 
+	void Start(){
+		// First see what language we want the menu to be in based on players choices, default is english
 		if (EnglishText == true) {
 			title.text = "Save the world";
 			playbutton.text = "Play";
@@ -65,6 +66,7 @@ public class SettingsMenu : MonoBehaviour {
 
 		List<string> options = new List<string>();
 
+		// add lists of resolutions available for the computer playing the game
 		int currentResolutionIndex = 0;
 		for (int i = 0; i < resolutions.Length; i++) {
 			string option = resolutions [i].width + "x" + resolutions [i].height;
@@ -75,7 +77,7 @@ public class SettingsMenu : MonoBehaviour {
 				currentResolutionIndex = i;
 			} 
 		}
-
+		// add resolutions to drop down list
 		resolutionDropDown.AddOptions (options);
 		resolutionDropDown.value = currentResolutionIndex;
 		resolutionDropDown.RefreshShownValue ();
@@ -86,20 +88,24 @@ public class SettingsMenu : MonoBehaviour {
 		audioMixer.SetFloat ("Volume", volume);
 	}
 
+	// Set quality based on Unity's graphic quality levels
 	public void SetQuality(int qualityLevel){
 		QualitySettings.SetQualityLevel (qualityLevel);
 	}
 
+	// Toggle full screen
 	public void SetFullScreen(bool isFullScreen){
 		Screen.fullScreen = isFullScreen;
 	}
 
+	// Applies chosen resolution
 	public void SetResolution(int ResolutionIndex){
 
 		Resolution resolution = resolutions [ResolutionIndex];
 		Screen.SetResolution (resolution.width, resolution.height, Screen.fullScreen);
 	}
 
+	// Change language to swedish
 	public void SetSwedishLanguage(){
 		if (EnglishText == true) {
 			EnglishText = false;
@@ -116,7 +122,7 @@ public class SettingsMenu : MonoBehaviour {
 			Tutorialtext.text = "Instruktioner";
 		}
 	}
-
+	// Change language to english
 	public void SetEnglishLanguage(){
 		if (EnglishText == false) {
 			EnglishText = true;

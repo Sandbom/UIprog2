@@ -16,12 +16,8 @@ public class enemyDamage : MonoBehaviour {
 		nextDamage = 0f;
 		
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
+	// Push back player and add damage to player
 	void OnTriggerStay2D(Collider2D other){
 		if (other.tag == "Player" && nextDamage < Time.time) {
 			Playerhealth HP = other.gameObject.GetComponent<Playerhealth> ();
@@ -31,6 +27,8 @@ public class enemyDamage : MonoBehaviour {
 			pushBack (other.transform);
 		}
 	}
+
+	// If player comes in contact with an enemy make the player get pushed away
 	void pushBack(Transform pushedObject){
 		Vector2 pushDirection = new Vector2 (pushedObject.position.x - transform.position.x, pushedObject.position.y - transform.position.y).normalized;
 		pushDirection *= pushBackForce;

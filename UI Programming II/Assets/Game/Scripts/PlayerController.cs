@@ -95,6 +95,7 @@ public class PlayerController : MonoBehaviour {
 		transform.localScale = theScale;
 	}
 
+	// Instantiates a bullet in the direction the player is facing
 	void fireGun(){
 		if (Time.time > nextFire) {
 			nextFire = Time.time + fireRate;

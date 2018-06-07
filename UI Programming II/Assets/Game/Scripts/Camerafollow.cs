@@ -18,7 +18,7 @@ public class Camerafollow : MonoBehaviour {
 		lowY = transform.position.y ;
 	}
 	
-	// Update is called once per frame
+	// Makes camera follow player
 	void FixedUpdate () {
 		Vector3 targetCanPos = target.position + offset;
 

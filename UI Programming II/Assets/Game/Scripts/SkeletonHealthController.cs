@@ -34,11 +34,7 @@ public class SkeletonHealthController : MonoBehaviour {
 		SkeletonCollider2 = GetComponent<BoxCollider2D> ();
 	}
 
-	// Update is called once per frame
-	void Update () {
-
-	}
-
+	// Add health to skeletons and if they die then queue the deaeth animation and add the appropriate score as well as queue death sound
 	public void addDamage(float damage){
 		enemyhealthbar1.gameObject.SetActive (true);
 		currentHealth = currentHealth - damage;

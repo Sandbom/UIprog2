@@ -17,7 +17,7 @@ public class ResetGame : MonoBehaviour {
 
 	Button btn;
 
-	// Use this for initialization
+	// Change language based on what language is chosen
 	void Start () {
 		if (SettingsMenu.EnglishText) {
 			lightningtext.text = "Lightning";
@@ -39,6 +39,7 @@ public class ResetGame : MonoBehaviour {
 		btn = GetComponent<Button> ();
 	}
 
+	// Reloads scene and resets the score
 	public void resetGame() {
 		SceneManager.LoadScene (1);
 		ScoreScript.scoreValue = 0;

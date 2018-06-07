@@ -13,7 +13,7 @@ public class ScoreScript : MonoBehaviour {
 		Score = GetComponent<Text> ();
 	}
 	
-	// Update is called once per frame
+	// Changes lang based on choice
 	void Update () {
 		if (SettingsMenu.EnglishText) {
 			Score.text = ("Score: " + scoreValue);

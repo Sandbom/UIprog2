@@ -7,6 +7,7 @@ public class BossMovement : MonoBehaviour {
 
 	float randomNumber;
 
+	// Cooldowns and timers for boss
 	float timer = 0.0f;
 	float maxTimer = 1.5f;
 	float coolDownTimer = 0.0f;
@@ -24,6 +25,7 @@ public class BossMovement : MonoBehaviour {
 	float roll;
 	public static bool BossAlive = true;
 
+	// variables to decide what projectile gets shot from where
 	public Transform shootfrom;
 	public Transform shootfrom2;
 	public GameObject bossBullet;
@@ -42,6 +44,7 @@ public class BossMovement : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
+	// Rolls a number between 0 and 50, if the number is above 5(~95%) shoot a projectile and otherwise swap sides and run that animation
 	void Update () {
 		if (StartBossFight.bossEngaged) {
 			timer += Time.deltaTime;
@@ -64,7 +67,7 @@ public class BossMovement : MonoBehaviour {
 			}
 		}
 
-
+	// Add damage to boss, if health is less than 0 we trigger the boss death animation and reward player with score.
 	public void addDamage(float damage){
 		currentHealth = currentHealth - damage;
 		BossHealthSlider.value = currentHealth;
@@ -85,6 +88,7 @@ public class BossMovement : MonoBehaviour {
 		}
 	}
 
+	// Called once the player beats the boss and is given options to return to main menu or quit game
 	void DeclareWinner(){
 		Time.timeScale = 0.05f;
 		Time.fixedDeltaTime = 0.02F * Time.timeScale;
@@ -93,6 +97,7 @@ public class BossMovement : MonoBehaviour {
 		Quitbutton.SetActive (true);
 	}
 
+	// instantiates one of the two projectiles from an upper or lower level, 50% chance for both.
 	void BossShoot(){
 		BossAnim.SetBool ("Charging", false);
 		if (facingRight) {
@@ -117,6 +122,7 @@ public class BossMovement : MonoBehaviour {
 		}
 	}
 
+	// We use this function to let the boss swap sides, so he charges for 2,5seconds then swaps. 
 	void ChangeSide(){
 		BossAnim.SetBool ("Shooting", false);
 		if (facingRight) {
@@ -135,6 +141,7 @@ public class BossMovement : MonoBehaviour {
 		}
 	}
 
+	// Flips boss once he is done chargings
 	void StopAndFlip(){
 		BossRB.velocity = new Vector2 (0, 0);
 		facingRight = !facingRight;

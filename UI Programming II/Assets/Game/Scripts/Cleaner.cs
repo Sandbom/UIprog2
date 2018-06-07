@@ -4,16 +4,8 @@ using UnityEngine;
 
 public class Cleaner : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
+	// If player or enemy falls of screen it is killed 
 	void OnTriggerEnter2D(Collider2D other){
 		if (other.tag == "Player") {
 			Playerhealth playerfall = other.GetComponent<Playerhealth> ();

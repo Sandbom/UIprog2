@@ -30,7 +30,7 @@ public class EnemyHealth : MonoBehaviour {
 
 
 
-	// Use this for initialization
+	// Initialize variables
 	void Start () {
 		currentHealth = enemyMaxHealth;	
 		enemyhealthbar.maxValue = currentHealth;
@@ -45,12 +45,9 @@ public class EnemyHealth : MonoBehaviour {
 		dmg = GetComponent<enemyDamage> ();
 
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
+
+	// Add damage to the enemy and if it has no health left, kill it and queue death animation and reward score to the player
 	public void addDamage(float damage){
 		enemyhealthbar.gameObject.SetActive (true);
 		currentHealth = currentHealth - damage;
@@ -77,6 +74,7 @@ public class EnemyHealth : MonoBehaviour {
 		}
 	}
 
+	// Destroys game object after 3 seconds and has a 15 % chance of dropping a heart on death.
 	void killEnemy(){
 
 		Destroy (gameObject, 3f);

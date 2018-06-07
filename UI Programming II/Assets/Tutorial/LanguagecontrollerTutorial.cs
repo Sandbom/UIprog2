@@ -12,7 +12,7 @@ public class LanguagecontrollerTutorial : MonoBehaviour {
 	public Text text3;
 
 
-	// Use this for initialization
+	// At start we see if we should change the language in any of the text fields
 	void Start () {
 		if (SettingsMenu.EnglishText) {
 			text1.text = "Use arrows to move\n\n\t& to jump";
@@ -24,9 +24,5 @@ public class LanguagecontrollerTutorial : MonoBehaviour {
 			text3.text = "Plocka upp mynt eller\n döda fiender för poäng";
 		}
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
 }

@@ -21,7 +21,7 @@ public class StartBossFight : MonoBehaviour {
 		bossAS = GetComponent<AudioSource> ();
 	}
 	
-	// Update is called once per frame
+	//Hide bossname Text and Slider once boss is dead
 	void Update () {
 		if (!BossMovement.BossAlive) {
 			BossHealthSlider.gameObject.SetActive (false);
@@ -29,6 +29,8 @@ public class StartBossFight : MonoBehaviour {
 		}
 	}
 
+
+	// When entering the collider, start the boss fight and change music and show slider and boss name.
 	void OnTriggerEnter2D(Collider2D other){
 		if (other.tag == "Player") {
 			audioMixer.SetFloat ("Volume", -80f);

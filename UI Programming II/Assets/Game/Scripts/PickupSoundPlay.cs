@@ -15,8 +15,8 @@ public class PickupSoundPlay : MonoBehaviour {
 		pickupAS = GetComponent<AudioSource> ();
 		soundCol = GetComponent<BoxCollider2D> ();
 	}
-	
-	// Update is called once per frame
+
+	// Play pickup sound when collecting coins and disable the collider once picked up once to prevent hearing sound multiple times
 	void OnTriggerEnter2D(Collider2D other){
 		if (other.tag == "Player") {
 			pickupAS.clip = PickupSound;

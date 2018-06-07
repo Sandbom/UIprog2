@@ -10,15 +10,7 @@ public class onPowerPickup : MonoBehaviour {
 
 	float timer = 1f;
 
-	// Use this for initialization
-	void Start () {
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	}
-
-
+	// Sets lightning effect weapon to true for 10 seconds after reset is called
 	void OnTriggerEnter2D(Collider2D other){
 		if (other.tag == "Player") {
 			gameObject.SetActive (false);
@@ -28,6 +20,7 @@ public class onPowerPickup : MonoBehaviour {
 		}
 	}
 
+	// Resets lightning effect
 	void resetPowerup(){
 		Powerupped = false;
 		removeTimers = true;

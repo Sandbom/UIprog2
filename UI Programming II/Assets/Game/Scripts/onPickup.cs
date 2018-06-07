@@ -6,9 +6,8 @@ public class onPickup : MonoBehaviour {
 
 	public float Score;
 
-	void Start () {
-	}
 
+	// Removes coin on pickup and adds score
 	void OnTriggerStay2D(Collider2D other){
 		if (other.tag == "Player") {
 			Destroy (gameObject);

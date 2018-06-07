@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class powerupTimer : MonoBehaviour {
 
+	// Variables to hide / show depending on weapon active
 	float timer = 10;
 	Text timerText;
 	public Image lightningproj;
@@ -21,7 +22,7 @@ public class powerupTimer : MonoBehaviour {
 		anim = gameObject.GetComponentInChildren<Animator> ();
 	}
 	
-	// Update is called once per frame
+	// Checks if power up is picked up and then we change which text is active and shown and we start timer.
 	void FixedUpdate () {
 		if (onPowerPickup.Powerupped) {
 			LightningText.SetActive (true);
@@ -41,7 +42,7 @@ public class powerupTimer : MonoBehaviour {
 	
 		}
 	}
-
+	// Removes lightning text
 	void removeText(){
 		LightningText.SetActive (false);
 	}

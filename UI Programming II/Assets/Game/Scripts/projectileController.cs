@@ -8,7 +8,8 @@ public class projectileController : MonoBehaviour {
 
 	Rigidbody2D myRB;
 
-	// Use this for initialization
+	// Awake is called once the object is instantiated,
+	// this function adds force in the proper direction to move the bullet left or right
 	void Awake () {
 
 		myRB = GetComponent<Rigidbody2D> ();

@@ -34,7 +34,8 @@ public class enemyMovement : MonoBehaviour {
 		enemyAS = GetComponent<AudioSource> ();
 	}
 	
-	// Update is called once per frame
+	// Update is called once per frame 
+	// Makes sure skeletons cannot constantly flip about
 	void Update () {
 		if (Time.time > nextFlipChance) {
 			if (Random.Range (0, 10) >= 5) {
@@ -44,6 +45,7 @@ public class enemyMovement : MonoBehaviour {
 		}
 	}
 
+	// Turns towards player if player is inside the detection collider
 	void OnTriggerEnter2D(Collider2D other){
 		if (other.tag == "Player") {
 			if (facingRight && other.transform.position.x < transform.position.x) {
@@ -61,6 +63,7 @@ public class enemyMovement : MonoBehaviour {
 		}
 	}
 
+	// Moves toward the player and queues walking animation
 	void OnTriggerStay2D(Collider2D other){
 
 		if (other.tag == "Player") {
@@ -84,6 +87,7 @@ public class enemyMovement : MonoBehaviour {
 		}
 	}	
 
+	// Returns to idle state once leaving detection collider
 	void OnTriggerExit2D(Collider2D other){
 		if (other.tag == "Player") {
 			canFlip = true;
@@ -94,7 +98,7 @@ public class enemyMovement : MonoBehaviour {
 		}
 	}
 
-
+	// Flips skeleton
 	void flipFacing(){
 		if (!canFlip) {
 			return;
