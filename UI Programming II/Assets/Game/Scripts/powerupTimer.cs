@@ -13,6 +13,7 @@ public class powerupTimer : MonoBehaviour {
 	public Image infinitySymbol;
 	public GameObject LightningText;
 
+
 	Animator anim;
 
 	// Use this for initialization
@@ -39,6 +40,9 @@ public class powerupTimer : MonoBehaviour {
 			timerText.enabled = false;
 			blueproj.enabled = true;
 			infinitySymbol.enabled = true;
+			timerText.text = "";
+			timer = 10;
+			onPowerPickup.removeTimers = false;
 	
 		}
 	}
